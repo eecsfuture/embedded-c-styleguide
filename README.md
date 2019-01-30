@@ -30,7 +30,7 @@ Google 保持其一贯的严谨精神, 数万字的指南涉及广泛, 论证严
 
 # 0.4 作者
   
-原作者（Google 官方英文版）:	  
+原作者（**Google 官方英文版**）:	  
 Benjy Weinberger  
 Craig Silverstein  
 Gregory Eitzmann  

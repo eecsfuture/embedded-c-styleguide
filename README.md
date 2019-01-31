@@ -51,4 +51,12 @@ eecsfuture
 
 # 目录
 - [1. 头文件](headers.md)
-
+- [2. 作用域](scoping.md)
+- [3. 函数](functions.md)
+- [4. 风格检查工具Cpplint](cpplint.md)
+- [5. 其他特性](others.md)
+- [6. 命名约定](naming.md)
+- [7. 注释](comments.md)
+- [8. 格式](formatting.md)
+- [9. 规则特例](exceptions.md)
+- [10. 结束语](end.md)

@@ -28,6 +28,9 @@ Google 保持其一贯的严谨精神, 数万字的指南涉及广泛, 论证严
 # 0.3 开源许可
 本项目和英文版一样, 使用 CC-By 3.0 许可证, 具体协议见https://creativecommons.org/licenses/by/3.0/
 
+
+<a rel="license" href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>.
+
 # 0.4 作者
   
 原作者（**Google 官方英文版**）:	  
@@ -47,5 +50,5 @@ lilinsanity
 eecsfuture
 
 # 目录
-
+- [1. 头文件](headers.md)
 

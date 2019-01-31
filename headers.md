@@ -1,4 +1,11 @@
-# 1. 头文件
+#### 目录
+- [1. 头文件](headers.md/#1.头文件)
+  - [1.1. Self-contained 头文件](headers.md/##1.1.Self-contained头文件)
+  - [1.2. #define 保护](headers.md/##1.2.#define保护)
+  - [1.3. 前置声明](headers.md/##1.3.前置声明)
+  - [1.4. ``#include`` 的路径及顺序](headers.md/##1.4.``#include``的路径及顺序)
+
+# 1.头文件
 
 通常每一个 ``.c`` 文件都有一个对应的 ``.h`` 文件. 也有一些常见例外, 如单元测试代码和只包含 ``main()`` 函数的 ``.c`` 文件.
 
@@ -6,13 +13,13 @@
 
 下面的规则将引导你规避使用头文件时的各种陷阱.
 
-## 1.1. Self-contained 头文件
+## 1.1.Self-contained头文件
 
 > **Tip**: 头文件应该能够自给自足（self-contained,也就是可以作为第一个头文件被引入），以 ``.h`` 结尾。
 
 所有头文件要能够自给自足。换言之，用户和重构工具不需要为特别场合而包含额外的头文件。详言之，一个头文件要有 define-guard，统统包含它所需要的其它头文件，也不要求定义任何特别 symbols.
 
-## 1.2. #define 保护
+## 1.2.#define保护
 
 > **Tip**: 所有头文件都应该使用 ``#define`` 来防止头文件被多重包含, 命名格式应当是: ``<PROJECT>_<PATH>_<FILE>_H_`` .
 
@@ -25,7 +32,7 @@
 		#endif // FOO_BAR_BAZ_H_
 ```
 
-# 1.3. 前置声明
+## 1.3.前置声明
 
 > **Tip**: 尽可能地避免使用前置声明。使用 ``#include`` 包含需要的头文件即可。
 
@@ -68,9 +75,9 @@
 * 尽量避免前置声明那些定义在其他项目中的实体.
 * 函数：总是使用 ``#include``.
 
-至于什么时候包含头文件，参见 **1.4. ``#include`` 的路径及顺序** 。
+至于什么时候包含头文件，参见 [1.4. ``#include`` 的路径及顺序](headers.md/##1.4.``#include``的路径及顺序) 。
 
-# 1.4. ``#include`` 的路径及顺序
+## 1.4.``#include``的路径及顺序
 
 > **Tip**: 使用标准的头文件包含顺序可增强可读性, 避免隐藏依赖: 相关头文件, C 库, C++ 库, 其他库的 `.h`, 本项目内的 `.h`.
 
@@ -96,7 +103,7 @@
 
 您所依赖的符号 (symbols) 被哪些头文件所定义，您就应该包含（include）哪些头文件，`前置声明`__ (forward declarations) 情况除外。比如您要用到 ``bar.h`` 中的某个符号, 哪怕您所包含的 ``foo.h`` 已经包含了 ``bar.h``, 也照样得包含 ``bar.h``, 除非 ``foo.h`` 有明确说明它会自动向您提供 ``bar.h`` 中的 symbol. 不过，凡是 c 文件所对应的「相关头文件」已经包含的，就不用再重复包含进其 c 文件里面了，就像 ``foo.c`` 只包含 ``foo.h`` 就够了，不用再管后者所包含的其它内容。
 
-举例来说, ``google-awesome-project/src/foo/internal/fooserver.cc`` 的包含次序如下:
+举例来说, ``google-awesome-project/src/foo/internal/fooserver.c`` 的包含次序如下:
 
 ```C
 	  #include "foo/public/fooserver.h" // 优先位置
